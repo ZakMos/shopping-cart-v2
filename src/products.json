@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1,
+    "title": "Sneakers",
+    "img": "https://clipartix.com/wp-content/uploads/2016/11/Clothing-pictures-clip-art.png",
+    "price": 119.99,
+    "sale": true,
+    "salePrice": 89.99,
+    "inventory": 3
+  },
+  {
+    "id": 2,
+    "title": " T-Shirt",
+    "img": "https://clipartix.com/wp-content/uploads/2016/11/Clothing-clothes-clip-art-free-clipart-images-2.png",
+    "price": 10.99,
+    "sale": true,
+    "salePrice": 6.99,
+    "inventory": 10},
+  {
+    "id": 3,
+    "title": "Socks",
+    "img": "https://clipartix.com/wp-content/uploads/2016/11/Clothing-0-images-about-clip-art-clothes-on-graphic.jpg",
+    "price": 2.99,
+    "sale": false,
+    "salePrice": 0,
+    "inventory": 5
+  },
+  {
+    "id": 4,
+    "title": "Jeans Shorts ",
+    "color": ["white", "black", "blue"],
+    "img": "https://clipartix.com/wp-content/uploads/2016/11/Clothing-clip-art-free.gif",
+    "price": 49.99,
+    "sale": true,
+    "salePrice": 39.99,
+    "inventory": 5
+  },
+  {
+    "id": 5,
+    "title": "Dress ",
+    "color": ["white", "black", "blue"],
+    "img": "https://clipartix.com/wp-content/uploads/2016/11/0-images-about-clipart-clothing-on-clip-art-2.jpg",
+    "price": 59.99,
+    "sale": false,
+    "salePrice": 0,
+    "inventory": 8
+  },
+  {
+    "id": 6,
+    "title": "Flip Flops ",
+    "color": null,
+    "img": "https://clipartix.com/wp-content/uploads/2016/11/Clothing-flip-flops-clip-art-clothes-clipart-image-2.jpg",
+    "price": 12.99,
+    "sale": false,
+    "salePrice": 0,
+    "inventory": 6
+  },
+  {
+    "id": 7,
+    "title": "Sweater ",
+    "color": null,
+    "img": "https://clipartix.com/wp-content/uploads/2016/11/Clothing-change-clothes-clipart-free-images.png",
+    "price": 23.99,
+    "sale": false,
+    "salePrice": 0,
+    "inventory": 4
+  },
+  {
+    "id": 8,
+    "title": "Shirts ",
+    "color": null,
+    "img": "https://clipartix.com/wp-content/uploads/2016/11/Clothing-clothes-clip-art-free-clipart-images-6.jpeg",
+    "price": 14.99,
+    "sale": false,
+    "salePrice": 0,
+    "inventory": 6
+  }
+]
