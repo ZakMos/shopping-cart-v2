@@ -27,7 +27,7 @@
   },
   {
     "id": 4,
-    "title": "Jeans Shorts ",
+    "title": "Jeans Short",
     "color": ["white", "black", "blue"],
     "img": "https://clipartix.com/wp-content/uploads/2016/11/Clothing-clip-art-free.gif",
     "price": 49.99,
@@ -67,12 +67,12 @@
   },
   {
     "id": 8,
-    "title": "Shirts ",
+    "title": "Shirt",
     "color": null,
     "img": "https://clipartix.com/wp-content/uploads/2016/11/Clothing-clothes-clip-art-free-clipart-images-6.jpeg",
     "price": 14.99,
-    "sale": false,
-    "salePrice": 0,
+    "sale": true,
+    "salePrice": 9.99,
     "inventory": 6
   }
 ]
