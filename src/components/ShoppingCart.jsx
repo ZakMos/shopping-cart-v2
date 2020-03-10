@@ -8,12 +8,11 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 const ShoppingCart = ({carts, removeItem, removeAllItems, checkOut}) => (
 <section className="container content-section">
 	<h2 className="section-header">CART</h2>
-	<div className="cart-row">
-		<span className="cart-item cart-header cart-column">ITEM</span>
-		<span className="cart-price cart-header cart-column">PRICE</span>
-		<span className="cart-quantity cart-header cart-column">QUANTITY</span>
+	<div className="cart-main-row">
+		<span className="cart-header">ITEM</span>
+		<span className="cart-header">PRICE</span>
+		<span className="cart-header">QUANTITY</span>
 	</div>
-	<div className="cart-items">
 	{carts.map(cart => (
 		<div key={cart.id}>
 			<div className="cart-row">
@@ -21,8 +20,8 @@ const ShoppingCart = ({carts, removeItem, removeAllItems, checkOut}) => (
 					<img className="cart-item-image" src={cart.img} width="100" height="100" alt="productImage"/>
 					<span className="cart-item-title">{cart.title}</span>
 				</div>
-					<span className="cart-price cart-column">{cart.sale === true ? cart.salePrice : cart.price}</span>
-					<div className="cart=quantity cart-column">
+					<span className="cart-column">€{cart.sale === true ? cart.salePrice : cart.price}</span>
+					<div className="cart-column">
 						<span className="cart-quantity-input">{cart.quantity}</span>
 						<span
 						className="delete-icon"
@@ -40,15 +39,14 @@ const ShoppingCart = ({carts, removeItem, removeAllItems, checkOut}) => (
 		))}
 		<div className="cart-total">
 			<strong className="cart-total-title">Total</strong>
-			<span className="cart-total-price">${carts.reduce((total, cart) => parseFloat((total + `${cart.sale === true ? cart.salePrice : cart.price}` * cart.quantity).toFixed(2)), 0)}</span>
+			<span className="cart-total-price">€{carts.reduce((total, cart) => parseFloat((total + `${cart.sale === true ? cart.salePrice : cart.price}` * cart.quantity).toFixed(2)), 0)}</span>
 		 </div>
 		<button
-			className="btn btn-primary btn-purchase"
+			className="btn btn-primary"
 			type="button"
 			onClick={() => checkOut(carts)}
 		>Checkout
 		</button>
-	</div>
 </section>
 );
 
