@@ -4,25 +4,26 @@ import { addToCart } from '../modules/actions';
 
 const ProductList = ({items, addToCart}) => (
   <div className="container">
-    <div className="cards">
+    <h2 className="section-header">Products</h2>
+    <div className="item-cards">
         {items.map(item => (
-          <div className="card "key={item.id}>
-            <p>
-              {item.title}
-            </p>
+          <div className="item-card "key={item.id}>
+            <p className="item-title">{item.title}</p>
               <span>
-              <img src={item.img} width= "200px" height= "200px" alt="productImage"/>
+                <img src={item.img} width= "200px" height= "200px" alt="productImage"/>
               </span>
-            <p className="price">
-            ${item.price} | {item.inventory }
+              <div className="items-price-inventory">
+                <p className={item.sale === true ?  "item-prisIfSale" : "item-price"}>
+                €{item.price}
+                </p>
+                <span className="item-inventory"> {item.inventory }</span>
+              </div>
+            <p className={item.sale===true? "item-salePrice" : "item-salePrice-none"} >
+            {item.sale === true  ? `Sale Price = €${item.salePrice}` : ""}
             </p>
-            <p className="salePrice" >
-            {item.sale === true  ? `Sale Price = $${item.salePrice}` : <br/>}
-            </p>
-
             <div className="button">
               <button
-              className="product-button"
+                className="item-button"
                 onClick={() => addToCart(item)}
       					disabled={item.inventory > 0 ? '' : 'disabled'}
               >{item.inventory > 0 ? 'Add To Cart' : 'Sold Out'}
