@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { removeItem, removeAllItems, checkOut } from '../modules/actions';
+import { addItem, removeItem, removeAllItems, checkOut } from '../modules/actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faMinusCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 
-const ShoppingCart = ({carts, removeItem, removeAllItems, checkOut}) => (
+const ShoppingCart = ({carts, addItem, removeItem, removeAllItems, checkOut}) => (
 <section className="container content-section">
 	<h2 className="section-header">CART</h2>
 	<div className="cart-main-row">
@@ -22,16 +22,35 @@ const ShoppingCart = ({carts, removeItem, removeAllItems, checkOut}) => (
 				</div>
 					<span className="cart-column">€{cart.sale === true ? cart.salePrice : cart.price}</span>
 					<div className="cart-column">
+					{/* <span
+						className="delete-icon"
+						onClick={() => addItem(cart)}
+						disabled={cart.inventory >= 0 ? '' : 'disabled'}
+              			>
+						
+							<FontAwesomeIcon icon={faPlusCircle}  
+								title="Add One Item" 
+								size="1x">
+							</FontAwesomeIcon>
+						</span> */}
 						<span className="cart-quantity-input">{cart.quantity}</span>
 						<span
 						className="delete-icon"
 						onClick={() => removeItem(cart)}
-						type="button"><FontAwesomeIcon icon={faTrashAlt}  title="Remove One Item" size="1x"></FontAwesomeIcon> 1
+						type="button">
+							<FontAwesomeIcon icon={faMinusCircle}  
+								title="Remove One Item" 
+								size="1x">
+							</FontAwesomeIcon>
 						</span>
 						<span
 						onClick={() => removeAllItems(cart)}
 						className="delete-icon"
-						type="button"><FontAwesomeIcon className="" icon={faTrashAlt} title="Remove All Items" size="1x"></FontAwesomeIcon> All
+						type="button">
+							<FontAwesomeIcon className="" icon={faTrashAlt} 
+								title="Remove All Items" 
+								size="1x">
+							</FontAwesomeIcon>
 						</span>
 					</div>
 			</div>
@@ -39,7 +58,8 @@ const ShoppingCart = ({carts, removeItem, removeAllItems, checkOut}) => (
 		))}
 		<div className="cart-total">
 			<strong className="cart-total-title">Total</strong>
-			<span className="cart-total-price">€{carts.reduce((total, cart) => parseFloat((total + `${cart.sale === true ? cart.salePrice : cart.price}` * cart.quantity).toFixed(2)), 0)}</span>
+			<span className="cart-total-price">
+				€{carts.reduce((total, cart) => parseFloat((total + `${cart.sale === true ? cart.salePrice : cart.price}` * cart.quantity).toFixed(2)), 0)}</span>
 		 </div>
 		<button
 			className="btn btn-primary"
@@ -56,6 +76,7 @@ const mapStoreProps = ({cart}) => ({
 
 const mapActionsProps = {
 	checkOut: checkOut,
+	addItem: addItem,
 	removeItem: removeItem,
 	removeAllItems: removeAllItems
 };
