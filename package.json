@@ -2,7 +2,7 @@
   "name": "shopping-cart",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://zakproject01.epizy.com/",
+  "homepage": "https://zak-shoppingcart.netlify.app/",
   "description": "simple small shopping site example",
   "author": "Zakaria Moslim",
   "dependencies": {
