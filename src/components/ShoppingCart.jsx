@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addItem, removeItem, removeAllItems, checkOut } from '../modules/actions';
+import { removeItem, removeAllItems, checkOut } from '../modules/actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinusCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -22,17 +22,6 @@ const ShoppingCart = ({carts, addItem, removeItem, removeAllItems, checkOut}) =>
 				</div>
 					<span className="cart-column">€{cart.sale === true ? cart.salePrice : cart.price}</span>
 					<div className="cart-column">
-					{/* <span
-						className="delete-icon"
-						onClick={() => addItem(cart)}
-						disabled={cart.inventory >= 0 ? '' : 'disabled'}
-              			>
-						
-							<FontAwesomeIcon icon={faPlusCircle}  
-								title="Add One Item" 
-								size="1x">
-							</FontAwesomeIcon>
-						</span> */}
 						<span className="cart-quantity-input">{cart.quantity}</span>
 						<span
 						className="delete-icon"
