@@ -65,7 +65,6 @@ const mapStoreProps = ({cart}) => ({
 
 const mapActionsProps = {
 	checkOut: checkOut,
-	addItem: addItem,
 	removeItem: removeItem,
 	removeAllItems: removeAllItems
 };
