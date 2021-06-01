@@ -4,7 +4,7 @@ class Footer extends Component {
   render() {
   return (
     <footer className="main-footer">
-      <h3 className="band-name">&copy; 2020 Zakaria Moslim </h3>
+      <h3 className="band-name">&copy; 2021 Zakaria Moslim </h3>
         <div className="contact">
           <a href="https://github.com/ZakMos" target="_blank" rel="noopener noreferrer">
             <img src="http://icons.iconarchive.com/icons/papirus-team/papirus-apps/24/github-icon.png" alt="github"/>
