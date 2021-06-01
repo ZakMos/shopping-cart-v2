@@ -12,29 +12,26 @@
     "@fortawesome/free-solid-svg-icons": "^5.3.1",
     "@fortawesome/react-fontawesome": "^0.1.2",
     "bootstrap": "^4.6.0",
+    "deploy": "^1.0.3",
     "font-awesome": "^4.7.0",
     "gh-pages": "^3.2.0",
+    "node-sass-chokidar": "^1.5.0",
+    "npm-run-all": "^4.1.5",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-redux": "^5.0.7",
-    "react-scripts": "^3.4.4",
+    "react-scripts": "^4.0.3",
     "redux": "^4.1.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
     "build-css": "node-sass-chokidar src/sass/ -o src/styles/",
     "watch-css": "npm run build-css && node-sass-chokidar src/sass/ -o src/styles/ --watch --recursive",
     "build-js": "react-scripts build",
     "deploy": "gh-pages -b master -d build",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
-    "build": "npm-run-all react-scripts build-css build-js",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "devDependencies": {
-    "node-sass-chokidar": "^1.5.0",
-    "npm-run-all": "^4.1.5",
-    "react-script": "^2.0.5"
+    "build": "react-scripts build npm-run-all build-css build-js"
   },
   "main": "index.js",
   "repository": {
